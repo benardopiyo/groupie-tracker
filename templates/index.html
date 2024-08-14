@@ -1,0 +1,32 @@
+<!-- templates/home.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Welcome to the Home Page!</h1>
+    {{range .}}
+    <div>
+        <img src="{{.Image}}" alt="image of {{.Name}}">
+        <p>{{.Id}}. {{.Name}}</p>
+        <h3>Member</h3>
+        <ol>
+        {{range .Member}}
+                    <li>{{.}}</li>
+            {{end}}
+        </ol>
+    
+        <!-- <p>Member: {{.Member}}</p> -->
+        <p>Creation Date: {{.CreationDate}}</p>
+        <p>First Album: {{.FirstAlbum}}</p>
+        <a href="/locations">Location</a><br>
+        <a href="/concert_dates">Concert Date</a><br>
+        <a href="/relations">Relation</a>
+    </div>
+    {{end}}
+</body>
+</html>
