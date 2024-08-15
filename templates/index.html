@@ -23,9 +23,9 @@
         <!-- <p>Member: {{.Member}}</p> -->
         <p>Creation Date: {{.CreationDate}}</p>
         <p>First Album: {{.FirstAlbum}}</p>
-        <a href="/locations">Location</a><br>
+        <a href="/locations?artistId={{.Id}}">Location</a><br>
         <a href="/concert_dates?artistId={{.Id}}">Concert Date</a><br>
-        <a href="/relations">Relation</a>
+        <a href="/relations?artistId={{.Id}}">Relation</a>
     </div>
     {{end}}
 </body>
