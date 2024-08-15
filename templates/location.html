@@ -7,20 +7,32 @@
     <title>Concert Locations</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Concert Locations</h1>
-        {{range .}}
-            <div class="location-item">
-                <h2>Id: {{.Id}}</h2>
-                <p>Date: <a href="{{.Dates}}" target="_blank">{{.Dates}}</a></p>
-                <ul>
-                    {{range .Locations}}
-                        <li>{{.}}</li>
-                    {{end}}
-                </ul>
-            </div>
+    <header>
+        <div class="logo">
+            <h1>Music Legends</h1>
+            <p>Discover the Icons of Music</p>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Concert Locations</h1>
+            {{range .}}
+                <div class="location-item">
+                    <h2>Id: {{.Id}}</h2>
+                    <p>Date: <a href="{{.Dates}}" target="_blank">{{.Dates}}</a></p>
+                    <ul>
+                        {{range .Locations}}
+                            <li>{{.}}</li>
+                        {{end}}
+                    </ul>
+                </div>
             {{end}}
-         <a href="/" class="back-home-button">Back to Home Page</a>
-    </div>
+            <a href="/" class="back-home-button">Back to Home Page</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Music Legends. All rights reserved.</p>
+        <p>Explore the legendary artists and their iconic works. For more information, visit our <a href="#">about page</a>.</p>
+    </footer>
 </body>
 </html>
