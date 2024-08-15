@@ -23,5 +23,3 @@ func FetchArtists() ([]models.Artist, error) {
 	}
 	return artists, nil
 }
-
-
