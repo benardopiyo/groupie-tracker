@@ -1,69 +1,120 @@
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Body Styling */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: linear-gradient(to right, #141e30, #243b55);
-    color: #333;
+    background: linear-gradient(to right, #141e30, #243b55);
+    color: #ffffff;
     line-height: 1.6;
-    padding: 20px;
+    padding: 0;
+    margin: 0;
 }
+
+/* Header Styling */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 1rem;
+    text-align: center;
+    color: #fff;
+    z-index: 1000;
+}
+
+header .logo h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #ff6347;
+}
+
+header .logo p {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* Main Content Styling */
+main {
+    padding-top: 80px; /* Adjust this value to the height of your fixed header */
+    width: 100%;
+}
+
+/* Container Styling */
 .container {
     max-width: 1200px;
     margin: auto;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(34, 34, 34, 0.8); /* Dark background with slight transparency */
     border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Darker shadow for a more prominent effect */
+    color: #ffffff; /* Ensures text is readable against the dark background */
 }
 
+/* Headings */
 h1 {
     text-align: center;
-    color: #00bfff;
+    color: #ff6347;
     font-size: 2.5em;
     margin-bottom: 20px;
-    font-family: 'Roboto',sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
-.location-item, .concert-item {
-    background: #ffffff;
-    border: 1px solid #ddd;
+h2, h3 {
+    text-align: left;
+    color: #e74c3c;
+    margin-bottom: 20px;
+}
+
+/* Item Cards */
+.location-item, .concert-item, .relation-item {
+    background: #444;
+    border: 1px solid #666;
     border-radius: 12px;
     padding: 20px;
     margin-bottom: 20px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
     transition: transform 0.3s, box-shadow 0.3s;
 }
-.location-item:hover {
+
+.location-item:hover, .concert-item:hover, .relation-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
 }
-.location-item h2, .concert-item h2 {
-    color: #e74c3c;
+
+.location-item h2, .concert-item h2, .relation-item h2 {
+    color: #ff6347;
     font-size: 1.8em;
     margin-bottom: 10px;
 }
-.location-item h3 {
+
+.location-item h3, .relation-item h3 {
     color: #3498db;
     font-size: 1.4em;
     margin-bottom: 10px;
 }
-.location-item p {
-    color: #555;
+
+.location-item p, .relation-item p {
+    color: #bbbbbb;
     margin-bottom: 10px;
     font-size: 1.1em;
 }
+
 .location-item a {
-    color: #3498db;
+    color: #87cefa;
     text-decoration: none;
     font-weight: bold;
 }
+
 .location-item a:hover {
     text-decoration: underline;
 }
-.location-item ul {
+
+.location-item ul, .relation-item ul {
     list-style: none;
     padding: 0;
 }
@@ -75,11 +126,11 @@ h1 {
 }
 
 .location-item li, .concert-list li {
-    background: #ecf0f1;
+    background: #555;
     margin-bottom: 10px;
     padding: 12px;
     border-radius: 6px;
-    color: #2c3e50;
+    color: #ffffff;
     font-size: 1.1em;
 }
 
@@ -88,6 +139,7 @@ h1 {
     color: #ff6347;
 }
 
+/* Back to Home Button */
 .back-home-button {
     display: block;
     width: 200px;
@@ -99,18 +151,39 @@ h1 {
     text-decoration: none;
     font-size: 1.2em;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s, transform 0.3s;
 }
+
 .back-home-button:hover {
     background-color: #34495e;
     transform: translateY(-3px);
 }
 
+/* Footer Styling */
 footer {
-    margin-top: 20px;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 0;
 }
 
+footer a {
+    color: #87cefa;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ff6347;
+}
+
+/* Responsive Styling */
 @media (max-width: 768px) {
     .container {
         width: 100%;
