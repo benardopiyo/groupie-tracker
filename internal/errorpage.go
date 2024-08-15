@@ -2,8 +2,8 @@ package internal
 
 import (
 	"html/template"
-	"net/http"
 	"log"
+	"net/http"
 )
 
 // ErrorPage renders the error.html template with the provided error message
