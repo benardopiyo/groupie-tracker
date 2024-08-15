@@ -3,8 +3,9 @@ package api
 import (
 	"encoding/json"
 	"fmt"
-	"groupie-Tracker/pkg/models"
 	"net/http"
+
+	"groupie-Tracker/pkg/models"
 )
 
 func FetchArtists() ([]models.Artist, error) {
@@ -22,3 +23,5 @@ func FetchArtists() ([]models.Artist, error) {
 	}
 	return artists, nil
 }
+
+

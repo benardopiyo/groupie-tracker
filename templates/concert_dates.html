@@ -3,14 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/tmp.css">
     <title>Concert Dates</title>
 </head>
 <body>
-    <h1>Concert Dates</h1>
-    <ul>
-        {{ range .Dates }}
-            <li>{{ . }}</li>
+    <div class="container">
+        <h1>Concert Dates</h1>
+        {{ if .}}
+            {{ range .}}
+                <div class="concert-item">
+                    <h2>Concert ID: {{.Id}}</h2>
+                    <ul class="concert-list">
+                        {{range .Dates}}
+                            <li>{{.}}</li>
+                        {{ end }}
+                    </ul>
+                </div>
+            {{ end }}
+        {{ else }}
+            <p class="no-dates">No concert dates available.</p>
         {{ end }}
-    </ul>
+        <a href="/" class="back-home-button">Back to Home Page</a>
+    </div>
 </body>
 </html>

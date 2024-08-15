@@ -9,5 +9,5 @@ func Routes() {
 	http.HandleFunc("/", HomeHandler)
 	http.HandleFunc("/relations", RelationHandler)
 	http.HandleFunc("/locations", LocationHandler)
-	http.HandleFunc("/concert_dates/1", ConcertDatesHandler)
+	http.HandleFunc("/concert_dates/", ConcertDatesHandler)
 }

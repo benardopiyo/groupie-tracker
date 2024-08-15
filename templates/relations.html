@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/tmp.css">
     <title>Relations</title>
 </head>
 <body>
     <h1>Relations</h1>
     {{range .}}
         <div>
-            <h2>Relation ID: {{.Id}}</h2>
+            <h2>Id: {{.Id}}</h2>
             <ul>
                 {{range $date, $locations := .DatesLocation}}
                     <li>{{ $date }}:

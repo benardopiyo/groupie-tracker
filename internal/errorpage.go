@@ -7,7 +7,7 @@ import (
 )
 
 // ErrorPage renders the error.html template with the provided error message
-func ErrorPage(w http.ResponseWriter, message string, code int) {
+func ErrorPage(w http.ResponseWriter, message string, statusCode int) {
 	tmpl, err := template.ParseFiles("./templates/error.html")
 	if err != nil {
 		log.Printf("failed to parse error template: %v", err)
@@ -15,7 +15,7 @@ func ErrorPage(w http.ResponseWriter, message string, code int) {
 		return
 	}
 
-	w.WriteHeader(code) // Set the appropriate HTTP status code
+	w.WriteHeader(statusCode) // Set the appropriate HTTP status code
 	err = tmpl.Execute(w, map[string]string{
 		"ErrorMessage": message,
 	})

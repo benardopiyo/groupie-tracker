@@ -13,7 +13,7 @@
     <div>
         <img src="{{.Image}}" alt="image of {{.Name}}">
         <p>{{.Id}}. {{.Name}}</p>
-        <h3>Member</h3>
+        <h3>Members</h3>
         <ol>
         {{range .Member}}
                     <li>{{.}}</li>
@@ -24,7 +24,7 @@
         <p>Creation Date: {{.CreationDate}}</p>
         <p>First Album: {{.FirstAlbum}}</p>
         <a href="/locations">Location</a><br>
-        <a href="/concert_dates">Concert Date</a><br>
+        <a href="/concert_dates?artistId={{.Id}}">Concert Date</a><br>
         <a href="/relations">Relation</a>
     </div>
     {{end}}
