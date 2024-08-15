@@ -1,32 +1,43 @@
-<!-- templates/home.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/base.css">
     <title>Home Page</title>
 </head>
 <body>
-    <h1>Welcome to the Home Page!</h1>
-    {{range .}}
-    <div>
-        <img src="{{.Image}}" alt="image of {{.Name}}">
-        <p>{{.Id}}. {{.Name}}</p>
-        <h3>Members</h3>
-        <ol>
-        {{range .Member}}
-                    <li>{{.}}</li>
+    <header>
+        <div class="logo">
+            <h1>Music Legends</h1>
+            <p>Discover the Icons of Music</p>
+        </div>
+    </header>
+    <main>
+        <h1>Spotlight on Music Legends</h1>
+        <div class="artist-container">
+            {{range .}}
+            <div class="artist-card">
+                <img src="{{.Image}}" alt="image of {{.Name}}">
+                <p>{{.Id}}. {{.Name}}</p>
+                <h3>Members</h3>
+                <ol>
+                {{range .Member}}
+                        <li>{{.}}</li>
+                {{end}}
+                </ol>
+                <p>Creation Date: {{.CreationDate}}</p>
+                <p>First Album: {{.FirstAlbum}}</p>
+                <a href="/locations?artistId={{.Id}}">Location</a><br>
+                <a href="/concert_dates?artistId={{.Id}}">Concert Date</a><br>
+                <a href="/relations?artistId={{.Id}}">Relation</a>
+            </div>
             {{end}}
-        </ol>
-    
-        <!-- <p>Member: {{.Member}}</p> -->
-        <p>Creation Date: {{.CreationDate}}</p>
-        <p>First Album: {{.FirstAlbum}}</p>
-        <a href="/locations?artistId={{.Id}}">Location</a><br>
-        <a href="/concert_dates?artistId={{.Id}}">Concert Date</a><br>
-        <a href="/relations?artistId={{.Id}}">Relation</a>
-    </div>
-    {{end}}
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Music Legends. All rights reserved.</p>
+        <p>Explore the legendary artists and their iconic works. For more information, visit our <a href="#">about page</a>.</p>
+    </footer>
 </body>
 </html>
